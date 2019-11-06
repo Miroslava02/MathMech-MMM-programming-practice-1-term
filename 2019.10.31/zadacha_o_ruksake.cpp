@@ -9,7 +9,7 @@
 using namespace std;
 struct predmeti {
 	int i;
-	int x[20];
+	int x[10];
 	int w, p;
 
 };
@@ -17,7 +17,6 @@ int main()
 {
 	const int arr_size = 10;
 	int sum = 0;
-	srand(time(0));
 	predmeti x[arr_size];
 	predmeti rukzak;
 	rukzak.w = 11;
@@ -30,10 +29,10 @@ int main()
 	x[5].w = 6; x[5].p = 6;
 	x[6].w = 7; x[6].p = 7;
 	x[7].w = 9; x[7].p = 9;
-	x[8].w = 8; x[8].p = 9;
+	x[8].w = 9; x[8].p = 9;
 	x[9].w = 9; x[9].p = 9;
 	x[10].w = 9; x[10].p = 9;
-	for (int i = 0; i <= arr_size; i++) {
+	for (int i = 0; i <= arr_size; i++) { //сортируем предметы по стоимости
 		for (int j = 0; j <= arr_size - i - 1; j++) {
 			if (x[j].p < x[j + 1].p) {
 				int temp = x[j].p;
@@ -49,12 +48,12 @@ int main()
 		cout << i << "." << x[i].w << " " << x[i].p << "\n";
 	}
 	for (int i = 0; i <= arr_size; i++) {
-		if (rukzak.w > x[i].w) {
+		if (rukzak.w > x[i].w) { //если влезает целиком - берём целиком
 			sum += x[i].p;
 			rukzak.w -= x[i].w;
 		}
 		else {
-			sum += (rukzak.w * x[i].p) / x[i].w;
+			sum += (rukzak.w * x[i].p) / x[i].w; //берем ту часть, что влезает, и выходим
 			break;
 		}
 	}
