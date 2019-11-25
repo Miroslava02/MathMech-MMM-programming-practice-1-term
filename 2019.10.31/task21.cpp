@@ -50,7 +50,9 @@ int main()
 	int count = 0;
 	for (int i = 1, z; i < n; i++, z = 0) {
 		for (int j = 0; j < i; j++) {
-			if (s[i].x1 > s[j].x2) z = 1;
+			if (s[i].x1 > s[j].x2) {
+				z = 1;
+			}
 			else z = 0;
 		}
 		if (z == 1) {
