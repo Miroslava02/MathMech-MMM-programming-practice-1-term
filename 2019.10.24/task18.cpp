@@ -17,7 +17,8 @@ long int quicksort(long int* arr, int low, int high, int k) {
 		}
 		if (y <= z) {
 			swap(arr[y], arr[z]);
-			y++; z--;
+			y++;
+			z--;
 		}
 	}
 	if (low <= k && k <= z) {
