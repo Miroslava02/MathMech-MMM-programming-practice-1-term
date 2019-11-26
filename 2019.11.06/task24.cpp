@@ -1,26 +1,21 @@
-﻿// Написать программу, находящую разложение натурального числа в сумму натуральных квадратов, с наименьшим числом слагаемых
-
+﻿//Написать программу, находящую разложение натурального числа в сумму натуральных квадратов, с наименьшим числом слагаемых
 
 #include <iostream>
-#include <cmath>
-
+#include <math.h>
 using namespace std;
+int main()
+{
+	int  a, b, isch, ferm;
+	cin >> isch; // чтение исходного числа
+	a = sqrt(isch);
+	b = isch - a * a;
+	ferm = (isch - 1) % 4; //теорема ферма-эйлера
+	if (b == 0) {
+		cout << isch << " = " << a << "^2";
+	}
+	else if (ferm == 0) {
+		
+	}
+	
+}
 
-bool rec(int n) {
-	if (n == 0) {
-		return true;
-	}
-	cout << (int) sqrt(n) << "^2";
-	if (n - (int)sqrt(n) * (int)sqrt(n) != 0) {
-		cout << " + ";
-	}
-	rec(n - (int)sqrt(n) * (int)sqrt(n));
-	return true;
-}
-int main() {
-	int a;
-	cin >> a;
-	cout << a << " = ";
-	rec(a);
-	cout << endl;
-}
